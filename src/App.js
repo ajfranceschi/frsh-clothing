@@ -2,15 +2,7 @@ import React from "react";
 import "./App.css";
 import HomePage from "./Pages/Homepage/homepage.component";
 import { Switch, Route } from 'react-router-dom';
-
-// create a hats page component that represents another route
-const HatsPage = () => {
-  return (
-    <div>
-      <h1>HATS PAGE</h1>
-    </div>
-  );
-};
+import ShopPage from "./Pages/Shop/shop.component";
 
 class App extends React.Component {
   render() {
@@ -18,7 +10,7 @@ class App extends React.Component {
       <div>
         <Switch>
           <Route exact path={"/"} component={HomePage}/>
-          <Route path={"/hats"} component={HatsPage} />
+          <Route path={"/shop"} component={ShopPage} />
         </Switch>
       </div>
     );
