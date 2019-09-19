@@ -1,24 +1,27 @@
-import React from 'react';
-import './header.styles.sass';
-import {Link} from "react-router-dom";
-import {ReactComponent as Logo} from '../../assets/crown.svg';
+import React from "react";
+import "./header.styles.sass";
+import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/crown.svg";
 
 const Header = () => {
   return (
-    <div className='header'>
-      <Link to={'/'} className='logoContainer'>
-        <Logo className='logo'/>
+    <div className="header">
+      <Link to={"/"} className="logoContainer">
+        <Logo className="logo" />
       </Link>
       <div className="headerLinks">
-        <Link className="headerLink" to={'/shop'}>
+        <Link className="headerLink" to={"/shop"}>
           SHOP
         </Link>
-        <Link className="headerLink" to={'/contact'}>
+        <Link className="headerLink" to={"/contact"}>
           CONTACT
+        </Link>
+        <Link className="headerLink" to={"/signin"}>
+          SIGN IN
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header;
