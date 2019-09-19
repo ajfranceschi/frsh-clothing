@@ -1,7 +1,7 @@
 import React from "react";
 import "./collectionPreview.styles.sass";
 import CollectionItem from "../CollectionItem/collectionItem.component";
-
+ 
 const CollectionPreview = ({ title, items }) => {
   return (
     <div className="collectionPreview">

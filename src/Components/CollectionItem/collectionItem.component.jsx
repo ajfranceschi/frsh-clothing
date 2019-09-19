@@ -1,7 +1,7 @@
 import React from "react";
 import "./collectionItem.styles.sass";
 
-const CollectionItem = ({ id, name, price, imageUrl }) => {
+const CollectionItem = ({ name, price, imageUrl }) => {
   return (
     <div className="collectionItem">
       <div
