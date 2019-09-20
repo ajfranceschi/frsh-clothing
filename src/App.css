@@ -13,3 +13,8 @@ a:hover,
 div.headerLink:hover {
   color: rgba(0, 0, 0, 0.87);
 }
+
+/* set all elements to border-box (removes default padding provided) */
+* {
+  box-sizing: border-box;
+}
