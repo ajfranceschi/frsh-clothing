@@ -25,6 +25,6 @@ const MenuItem = ({
       </div>
     </div>
   )
-}
+};
 
 export default withRouter(MenuItem);
