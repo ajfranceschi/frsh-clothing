@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import CartIcon from "../CartIcon/cartIcon.component";
 import CartDropdown from "../CartDropdown/cartDropdown.component";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
       <Link to={"/"} className="logoContainer">
@@ -21,23 +21,27 @@ const Header = ({ currentUser }) => {
           CONTACT
         </Link>
 
-        {
-          currentUser ? 
-          <div className='headerLink' onClick={() => auth.signOut()}>SIGN OUT</div> 
-          : 
-          <Link className="headerLink" to={"/signin"}>SIGN IN</Link>
-        }
+        {currentUser ? (
+          <div className="headerLink" onClick={() => auth.signOut()}>
+            SIGN OUT
+          </div>
+        ) : (
+          <Link className="headerLink" to={"/signin"}>
+            SIGN IN
+          </Link>
+        )}
         <CartIcon />
       </div>
-      <CartDropdown />
+      { hidden ? null : <CartDropdown /> }
     </div>
   );
 };
 
-const mapStateToProps = (rootReducerState) => {
+const mapStateToProps = rootReducerState => {
   return {
     // currentUser : rootReducer.userReducer.userReducerValue
-    currentUser: rootReducerState.user.currentUser
-  }
+    currentUser: rootReducerState.user.currentUser,
+    hidden: rootReducerState.cart.hidden
+  };
 };
 export default connect(mapStateToProps)(Header);
