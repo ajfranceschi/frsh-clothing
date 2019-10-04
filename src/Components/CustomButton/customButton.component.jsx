@@ -7,6 +7,6 @@ const CustomButton = ({children, isGoogleSignInButton, inverted, ...otherButtonP
       {children}
     </button>
   )
-}
+};
 
 export default CustomButton;

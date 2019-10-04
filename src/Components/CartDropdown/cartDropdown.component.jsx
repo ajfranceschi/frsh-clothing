@@ -6,7 +6,7 @@ const CartDropdown = () => {
   return (
     <div className='cartDropdownDiv'>
       <div className="cartItems">
-
+        {/*<CartItem />*/}
       </div>
       <CustomButton>Go To Checkout</CustomButton>
     </div>

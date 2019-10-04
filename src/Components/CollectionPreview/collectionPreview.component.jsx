@@ -13,10 +13,7 @@ const CollectionPreview = ({ title, items }) => {
             return (
               <CollectionItem
                 key={item.id}
-                imageUrl={item.imageUrl}
-                name={item.name}
-                price={item.price}
-                id={item.id}
+                item={item}
               />
             );
           })}
