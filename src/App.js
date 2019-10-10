@@ -1,15 +1,24 @@
 import React from "react";
 import "./App.css";
-import HomePage from "./Pages/Homepage/homepage.component";
-import { Switch, Route, Redirect } from "react-router-dom";
-import ShopPage from "./Pages/Shop/shop.component";
-import Header from "./Components/Header/header.component";
-import SignInSignUp from "./Pages/SignIn-SignUp/signIn-signUp.component";
+
+// Firebase Auth
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils"; // firebase auth
+
+// Redux
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+
+// Redux Files
 import { setCurrentUser } from "./redux/user/user.actions";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentUser} from "./redux/user/user.selectors";
+
+// Pages
+import HomePage from "./Pages/Homepage/homepage.component";
+import ShopPage from "./Pages/Shop/shop.component";
+import SignInSignUp from "./Pages/SignIn-SignUp/signIn-signUp.component";
+import Header from "./Components/Header/header.component";
+import CheckoutPage from './Pages/Checkout/checkout.component';
 
 class App extends React.Component {
   /*constructor() {
@@ -55,6 +64,7 @@ class App extends React.Component {
           <Route
             exact
             path={"/signin"}
+            // conditonal rendering on page.
             render={() => {
               return this.props.currentUser ? (
                 <Redirect to="/" />
@@ -63,6 +73,7 @@ class App extends React.Component {
               );
             }}
           />
+          <Route exact path='/checkout' component={CheckoutPage} />
         </Switch>
       </div>
     );
