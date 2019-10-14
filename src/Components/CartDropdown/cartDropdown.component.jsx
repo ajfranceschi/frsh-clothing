@@ -6,8 +6,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { createStructuredSelector } from 'reselect';
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
-const CartDropdown = ({ cartItems, history }) => {
+const CartDropdown = ({ cartItems, history, dispatch }) => {
+    console.log(dispatch);
     return (
         <div className='cartDropdownDiv'>
             <div className='cartItems'>
@@ -17,7 +19,14 @@ const CartDropdown = ({ cartItems, history }) => {
                     <span className='cartEmptyMessage'>Your cart is empty</span>
                 )}
             </div>
-            <CustomButton onClick={() => history.push('/checkout')}>Go To Checkout</CustomButton>
+            <CustomButton
+                onClick={() => {
+                    history.push('/checkout');
+                    dispatch(toggleCartHidden());
+                }}
+            >
+                Go To Checkout
+            </CustomButton>
         </div>
     );
 };
