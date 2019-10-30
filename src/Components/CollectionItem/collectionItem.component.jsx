@@ -10,7 +10,7 @@ const CollectionItem = ({item, addItemToCart}) => {
     <div className="collectionItem">
       <div
         className="image"
-        style={{ backgroundImage: `url(${imageUrl}` }}
+        style={{ backgroundImage: `url(${imageUrl})` }}
       />
         <div className="collectionFooter">
           <span className="name">{name}</span>
