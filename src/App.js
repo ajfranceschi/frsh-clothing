@@ -29,7 +29,7 @@ class App extends React.Component {
     };
   }*/
 
-  unsubscribeFromAuth = null; //declare a null funciton to be reassigned later:
+  unsubscribeFromAuth = null; //declare a null function to be reassigned later:
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
