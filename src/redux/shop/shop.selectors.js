@@ -10,6 +10,12 @@ export const selectShopCollections = createSelector(
     shop => shop.collections
 );
 
+// selector to convert the shopData object into an array for use with the collections overview
+export const selectCollectionsForReview = createSelector(
+    [selectShopCollections],
+    collections => Object.keys(collections).map(key => collections[key])
+);
+
 export const selectCollection = collectionUrlParam =>
     createSelector(
         [selectShopCollections],
