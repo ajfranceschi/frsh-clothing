@@ -5,7 +5,7 @@ import CollectionPage from '../Collection/Collection.component';
 import { Route } from 'react-router-dom';
 
 const ShopPage = ({match}) => {
-    console.log(match.path);
+    // console.log(match.path);
     return (
         <div className='shopPage'>
 
