@@ -7,7 +7,6 @@ const INITIAL_STATE = {
 const shopReducer = (rootReducerState = INITIAL_STATE, action) => {
     switch (action.type) {
         default:
-            console.log(rootReducerState);
             return rootReducerState;
     }
 };
