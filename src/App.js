@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 // Firebase Auth
-import { auth, createUserProfileDocument } from './firebase/firebase.utils'; // firebase auth
+import { addCollectionAndDocuments, auth, createUserProfileDocument } from './firebase/firebase.utils'; // firebase auth
 
 // Redux
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -33,7 +33,7 @@ class App extends React.Component {
   unsubscribeFromAuth = null; //declare a null function to be reassigned later:
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser, collectionsArray } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuthObject => {
       if (userAuthObject) {
@@ -48,6 +48,7 @@ class App extends React.Component {
         });
       }
       setCurrentUser(userAuthObject);
+      addCollectionAndDocuments('collections', collectionsArray);
     });
   }
 

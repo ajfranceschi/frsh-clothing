@@ -41,7 +41,7 @@ export const createUserProfileDocument = async (userAuthObj, additionalDataObj) 
   return userRef;
 };
 
-// Seed database
+// Seed Firebase Firestore
 export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
   const collectionRef = firestore.collection(collectionKey);
   console.log(collectionRef);
