@@ -1,4 +1,4 @@
-import {UserActionTypes} from "./user.types";
+import { UserActionTypes } from './user.types';
 // when the reducer is called, the store passes the current state to it.
 // The first time the reducer is called the store sends an empty state
 // therefore we need to create an initial state to be used if

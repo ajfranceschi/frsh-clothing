@@ -5,21 +5,22 @@ const selectCart = rootReducerState => rootReducerState.cart;
 
 // Output selectors
 export const selectCartItems = createSelector(
-    [selectCart],
-    cart => cart.cartItems
+  [selectCart],
+  cart => cart.cartItems
 );
 
 export const selectCartHidden = createSelector(
-    [selectCart],
-    cart => cart.hidden
+  [selectCart],
+  cart => cart.hidden
 );
 
 export const selectCartItemsCount = createSelector(
-    [selectCartItems],
-    cartItems => cartItems.reduce((accumulator, cartItem) => accumulator + cartItem.quantity, 0)
+  [selectCartItems],
+  cartItems => cartItems.reduce((accumulator, cartItem) => accumulator + cartItem.quantity, 0)
 );
 
 export const selectCartTotal = createSelector(
-    [selectCartItems],
-    cartItems => cartItems.reduce((accumulator, cartItem) => accumulator + (cartItem.quantity * cartItem.price), 0)
+  [selectCartItems],
+  cartItems =>
+    cartItems.reduce((accumulator, cartItem) => accumulator + cartItem.quantity * cartItem.price, 0)
 );

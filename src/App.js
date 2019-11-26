@@ -1,23 +1,24 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
 // Firebase Auth
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils"; // firebase auth
+import { auth, createUserProfileDocument } from './firebase/firebase.utils'; // firebase auth
 
 // Redux
-import { Switch, Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Redux Files
-import { setCurrentUser } from "./redux/user/user.actions";
-import {createStructuredSelector} from "reselect";
-import {selectCurrentUser} from "./redux/user/user.selectors";
+import { setCurrentUser } from './redux/user/user.actions';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from './redux/user/user.selectors';
+import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
 // Pages
-import HomePage from "./Pages/Homepage/homepage.component";
-import ShopPage from "./Pages/Shop/shop.component";
-import SignInSignUp from "./Pages/SignIn-SignUp/signIn-signUp.component";
-import Header from "./Components/Header/header.component";
+import HomePage from './Pages/Homepage/homepage.component';
+import ShopPage from './Pages/Shop/shop.component';
+import SignInSignUp from './Pages/SignIn-SignUp/signIn-signUp.component';
+import Header from './Components/Header/header.component';
 import CheckoutPage from './Pages/Checkout/checkout.component';
 
 class App extends React.Component {
@@ -59,18 +60,14 @@ class App extends React.Component {
       <div>
         <Header />
         <Switch>
-          <Route exact path={"/"} component={HomePage} />
-          <Route path={"/shop"} component={ShopPage} />
+          <Route exact path={'/'} component={HomePage} />
+          <Route path={'/shop'} component={ShopPage} />
           <Route
             exact
-            path={"/signin"}
+            path={'/signin'}
             // conditonal rendering on page.
             render={() => {
-              return this.props.currentUser ? (
-                <Redirect to="/" />
-              ) : (
-                <SignInSignUp />
-              );
+              return this.props.currentUser ? <Redirect to='/' /> : <SignInSignUp />;
             }}
           />
           <Route exact path='/checkout' component={CheckoutPage} />
@@ -81,8 +78,9 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
-})
+  currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionsForPreview
+});
 
 const mapDispatchToProps = dispatch => {
   // function that gets the user object and then calls dispatch and dispatches setCurrentUser action with the user

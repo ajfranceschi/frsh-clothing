@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect';
 
 // Input selector:
 const selectUser /*userReducer*/ = (rootReducer) /*state*/ => rootReducer.user;
