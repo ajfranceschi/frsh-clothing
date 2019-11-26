@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 //     ${HeaderLinkStyles}
 // `;
 
-export const HeaderLink = styled.div`
+export const HeaderLink = styled(Link)`
     padding: 10px 15px
     cursor: pointer
 `;
