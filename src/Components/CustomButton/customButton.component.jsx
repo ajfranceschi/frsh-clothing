@@ -3,7 +3,6 @@ import React from 'react';
 import { CustomButtonContainer } from './customButton.styles';
 
 const CustomButton = (props) => {
-  console.log(props);
     return (
         <CustomButtonContainer className='customButton' {...props}>
             {props.children}
