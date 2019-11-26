@@ -1,18 +1,19 @@
-import styled, { css } from 'styled-components';
+import styled/*, { css }*/ from 'styled-components';
 import { Link } from 'react-router-dom';
 
 // to share css between styled-components declare a block of css code and then add it as the styled component's rules
-const HeaderLinkStyles = css`
+// const HeaderLinkStyles = css`
+//     padding: 10px 15px
+//     cursor: pointer
+// `;
+
+// export const HeaderLink =  styled(Link)`
+//     ${HeaderLinkStyles}
+// `;
+
+export const HeaderLink = styled.div`
     padding: 10px 15px
     cursor: pointer
-`;
-
-export const HeaderLink =  styled(Link)`
-    ${HeaderLinkStyles}
-`;
-
-export const HeaderLinkDiv = styled.div`
-    ${HeaderLinkStyles}
 `;
 
 // declare the rest of the divs

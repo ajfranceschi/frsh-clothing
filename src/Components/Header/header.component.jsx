@@ -1,5 +1,5 @@
 import React from "react";
-import {HeaderContainer, HeaderLink, HeaderLinkDiv, HeaderLinksContainer, LogoContainer} from './header.styles';
+import {HeaderContainer, HeaderLink, /*HeaderLinkDiv,*/ HeaderLinksContainer, LogoContainer} from './header.styles';
 // import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { auth } from "../../firebase/firebase.utils";
@@ -25,9 +25,9 @@ const Header = ({ currentUser, hidden }) => {
         </HeaderLink>
 
         {currentUser ? (
-          <HeaderLinkDiv className="headerLink" onClick={() => auth.signOut()}>
+          <HeaderLink as='div' className="headerLink" onClick={() => auth.signOut()}>
             SIGN OUT
-          </HeaderLinkDiv>
+          </HeaderLink>
         ) : (
           <HeaderLink className="headerLink" to={"/signin"}>
             SIGN IN
