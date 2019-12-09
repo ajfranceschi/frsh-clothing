@@ -42,9 +42,16 @@ export const createUserProfileDocument = async (userAuthObj, additionalDataObj) 
 };
 
 // Seed Firebase Firestore
-export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
   const collectionRef = firestore.collection(collectionKey);
-  console.log(collectionRef);
+
+  const batch = firestore.batch();
+  for (const object of objectsToAdd) {
+    const newDocRef = collectionRef.doc(); //get me a new document in this collection with a random ID
+    batch.set(newDocRef, object);
+  }
+
+  return await batch.commit();
 };
 
 //google authentication utility
