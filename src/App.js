@@ -66,7 +66,7 @@ class App extends React.Component {
           <Route
             exact
             path={'/signin'}
-            // conditonal rendering on page.
+            // conditional rendering on page.
             render={() => {
               return this.props.currentUser ? <Redirect to='/' /> : <SignInSignUp />;
             }}
