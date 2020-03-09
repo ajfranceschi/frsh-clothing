@@ -3,7 +3,7 @@
 ![FRSH-Clothing](/screenshot.png)
 --
 
-Frsh-Clothing, a clothing e-commerce site made with React.  The site is in developer mode, therefore purchases cannot be made.
+Frsh-Clothing, a clothing e-commerce site made with React.  The site is in testing mode, therefore purchases cannot be made.
 
 ### [Live Demo](https://frsh-clothing.herokuapp.com/)
 
