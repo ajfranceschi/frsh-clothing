@@ -15,3 +15,6 @@ Technologies Used:
 * Firebase
 * Stripe
 * Sass
+* JavaScript
+* HTML
+* CSS
